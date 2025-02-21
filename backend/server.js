@@ -40,7 +40,9 @@ app.get('/', async function(req, res) {
 });
 
 // Use visitor routes
-app.use('/api/visitors', visitorRoutes); // All visitor-related routes will be prefixed with /api/visitors
+app.use('/api/visitors', visitorRoutes);
+ // All visitor-related routes will be prefixed with /api/visitors
+ 
 
 // Start the server
 const PORT = process.env.PORT || 5000;
