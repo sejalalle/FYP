@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(cors({
     origin: 'http://localhost:5173', // Allow requests from this origin
-    methods: ['GET', 'POST', 'PUT', 'DELETE'], // Specify allowed methods
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'], // Add PATCH to allowed methods
     credentials: true // Allow credentials if needed
 }));
 

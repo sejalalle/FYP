@@ -5,6 +5,8 @@ const {
     getVisitorById,
     updateVisitor,
     deleteVisitor,
+    approveVisitor, // Add this
+    rejectVisitor, // Add this
 } = require('../controllers/visitorController'); // Import the controller functions
 
 const router = express.Router();
@@ -23,5 +25,11 @@ router.put('/:id', updateVisitor);
 
 // Route to delete a visitor by ID
 router.delete('/:id', deleteVisitor);
+
+// Route to approve a visitor by ID
+router.patch('/approve/:id', approveVisitor); // Add this
+
+// Route to reject a visitor by ID
+router.patch('/reject/:id', rejectVisitor); // Add this
 
 module.exports = router; // Export the router
