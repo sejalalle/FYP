@@ -22,6 +22,10 @@ import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import About from './pages/About';
 
+// Mockup Components
+import Home from './Mockup/pages/Home';
+import Customization from './Mockup/pages/Customization'; // You'll need to create this
+
 // Create a custom Material-UI theme
 const theme = createTheme({
   palette: {
@@ -121,6 +125,18 @@ const VisitorLayout = ({ children }) => (
   </Box>
 );
 
+// Layout component for mockup pages (without header/footer for full control)
+const MockupLayout = ({ children }) => (
+  <Box sx={{ 
+    minHeight: '100vh',
+    display: 'flex',
+    flexDirection: 'column',
+    bgcolor: 'background.default'
+  }}>
+    {children}
+  </Box>
+);
+
 // Protected Route component with loading state
 const ProtectedRoute = ({ children }) => {
   const [isLoading, setIsLoading] = React.useState(true);
@@ -169,9 +185,6 @@ const App = () => {
           <Route path="/about" element={<About />} />
           
           {/* Visitor Management routes */}
-          
-       
-          
           <Route path="/visitor-form" element={
             <VisitorLayout>
               <VisitorForm />
@@ -196,6 +209,18 @@ const App = () => {
             <VisitorLayout>
               <ApprovalHandler type="reject" />
             </VisitorLayout>
+          } />
+
+          {/* Mockup routes */}
+          <Route path="/mockup" element={
+            <MockupLayout>
+              <Home />
+            </MockupLayout>
+          } />
+          <Route path="/mockup/customization/:boxType" element={
+            <MockupLayout>
+              <Customization />
+            </MockupLayout>
           } />
 
           {/* Protected dashboard routes */}

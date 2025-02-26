@@ -1,0 +1,174 @@
+.home-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f9fafb;
+    overflow: hidden; /* Prevents horizontal scrolling */
+  }
+  
+  /* HOME SIDEBAR */
+  .home-sidebar {
+    width: 350px !important;
+    margin: 20px;
+    background: linear-gradient(to bottom right, #fbcfe8, #93c5fd);
+    color: #1f2937;
+    padding: 20px !important;
+    border: 1px solid #000000;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+    overflow-y: auto;
+    height: 100vh;
+    position: fixed;
+  }
+  
+  .home-sidebar-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+    margin-left: 10px;
+    margin-top: 10px;
+  }
+  
+  .category-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .category-item {
+    background: none;
+    border: none;
+    padding: 12px 18px;
+    text-align: left;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .category-item:hover,
+  .category-item.active {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* MAIN CONTENT */
+  .content {
+    flex-grow: 1;
+    padding: 20px;
+    margin-left: 420px; /* Space for home-sidebar */
+    margin-right: 10px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Prevents any horizontal scrolling */
+  }
+  
+  /* INTRO SECTION */
+  .intro-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: linear-gradient(to right, #fbcfe8, #93c5fd);
+    padding: 30px;
+    border-radius: 20px;
+    border: 2px solid #000;
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  .intro-text h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #1f2937;
+  }
+  
+  .intro-text {
+    margin-left: 50px;
+  }
+  
+  .intro-animation{
+    margin-right: 80px;
+  }
+  
+  .search-input {
+    width: 90%;
+    margin-left: 10px;
+    font-size: 1.2rem;
+    padding: 12px;
+    border: 2px solid #1f2937;
+    border-radius: 10px;
+  }
+  
+  .search-input:hover{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1.03 );
+    transition: all 0.3s ease-in-out;
+  } 
+  
+  .search-item{
+    margin: 10px;
+    padding: 12px 18px;
+    border-radius: 25px;
+    transition: background 0.3s ease-in-out;
+  }
+  
+  .search-item:hover{
+    background-color: white;
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  /* MOCKUP SECTION */
+  .mockup-section {
+    flex-grow: 1;
+    overflow-y: auto; /* Only vertical scrolling */
+    padding-bottom: 20px;
+    padding-right: 15px;
+  }
+  
+  /* Mockup Grid - Now 3 per row */
+  .mockup-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr)); /* 3 equal columns */
+    gap: 25px; /* Adds more space between mockups */
+    padding-bottom: 20px;
+  }
+  
+  /* Mockup Cards - Reduced size for better spacing */
+  .mockup-card {
+    background: white;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #000000;
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+    width: 90%; /* Slightly smaller width for spacing */
+    aspect-ratio: 1.3 / 1; /* Reduced height for compact fit */
+    margin: auto; /* Centering inside grid */
+  }
+  
+  .mockup-card:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transform: scale(1.04 );
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .mockup-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    background: #f3f4f6;
+    border-radius: 5px;
+  }
+  
+  .mockup-title {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 5px;
+  }
+  
+

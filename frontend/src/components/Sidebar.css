@@ -1,0 +1,111 @@
+/* Sidebar container */
+.sidebar-container {
+    width: 300px;
+    background: #f3f2f5;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Sidebar title */
+  .sidebar-title {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #333;
+  }
+  
+  /* Sidebar content */
+  .sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+  /* Sidebar sections */
+  .sidebar-section {
+    padding: 10px;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+  
+  /* Sidebar subtitle */
+  .sidebar-subtitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #120606;
+  }
+  
+  /* Labels */
+  .sidebar-label {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 5px;
+    display: block;
+  }
+  
+  /* Color picker */
+  .sidebar-color-picker {
+    width: 100%;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .sidebar-color-picker:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Select dropdown */
+  .sidebar-select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #fefbfb;
+    background: rgb(255, 255, 255);
+    cursor: pointer;
+    transition: 0.2s;
+  }
+  
+  .sidebar-select:hover {
+    border-color: #6d6767;
+  }
+  
+  /* Sidebar footer */
+  .sidebar-footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  /* Reset button */
+  .sidebar-button {
+    background: #641de7;
+    color: white;
+    padding: 10px 15px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .sidebar-button:hover {
+    background: #810ae8;
+    transform: scale(1.05);
+  }
+  
+  /* Placeholder text */
+  .sidebar-placeholder {
+    text-align: center;
+    font-size: 14px;
+    color: #888;
+  }
+  

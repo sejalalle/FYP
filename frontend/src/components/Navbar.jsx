@@ -1,30 +1,44 @@
-import React, { useState } from 'react';
+import React from "react";
+import { exportDieline } from "../Mockup/utils/ExportUtils"; 
+import "./Navbar.css";
 
-function Navbar() {
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+const Navbar = ({ selectedFace, undo, redo, zoom, setZoom, shapeType, customizationState }) => {
+  const handleZoom = (direction) => {
+    setZoom((prev) => {
+      const newZoom = direction === "in" ? prev + 0.1 : prev - 0.1;
+      return Math.min(Math.max(newZoom, 0.5), 2);
+    });
+  };
 
-  const toggleDropdown = () => {
-    setIsDropdownOpen(!isDropdownOpen);
+  const handleExport = () => {
+    if (!shapeType) {
+      alert("No shape selected for export!");
+      return;
+    }
+    exportDieline(shapeType, customizationState);
   };
 
   return (
-    <nav className="bg-lightcoral p-4 fixed top-0 w-full z-10">
-      <div className="flex justify-between items-center">
-        <div className="text-white text-lg font-bold">Parksons Packaging</div>
-        <div className="relative">
-          <button onClick={toggleDropdown} className="text-white">Menu</button>
-          {isDropdownOpen && (
-            <ul className="absolute right-0 mt-2 w-48 bg-white shadow-lg">
-              <li className="p-2 hover:bg-gray-200"><a href="#">Home</a></li>
-              <li className="p-2 hover:bg-gray-200"><a href="#">About</a></li>
-              <li className="p-2 hover:bg-gray-200"><a href="#">Careers</a></li>
-              <li className="p-2 hover:bg-gray-200"><a href="#">Locations</a></li>
-            </ul>
-          )}
-        </div>
+    <div className="navbar">
+      <div className="nav-left">
+        <button onClick={undo}>⏪ Undo</button>
+        <button onClick={redo}>⏩ Redo</button>
       </div>
-    </nav>
+
+      {/* <div className="nav-center">
+        🎨 Editing: {selectedFace !== null ? `Face ${selectedFace}` : "None"}
+      </div> */}
+
+      <div className="nav-right">
+        <button onClick={() => handleZoom("out")}>➖</button>
+        <span>{(zoom * 100).toFixed(0)}%</span>
+        <button onClick={() => handleZoom("in")}>➕</button>
+        <button className="export-btn" onClick={handleExport} disabled={!shapeType}>
+          🚀 Export
+        </button>
+      </div>
+    </div>
   );
-}
+};
 
 export default Navbar;
